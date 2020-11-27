@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Housing index{% endblock %}
+
+{% block body %}
+    <h1>Housing index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title_housing</th>
+                <th>Description_housing</th>
+                <th>Disponibility_housing</th>
+                <th>Price_per_night_housing</th>
+                <th>Address_housing</th>
+                <th>Type_housing</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for housing in housings %}
+            <tr>
+                <td>{{ housing.id }}</td>
+                <td>{{ housing.titleHousing }}</td>
+                <td>{{ housing.descriptionHousing }}</td>
+                <td>{{ housing.disponibilityHousing ? housing.disponibilityHousing|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ housing.pricePerNightHousing }}</td>
+                <td>{{ housing.addressHousing }}</td>
+                <td>{{ housing.typeHousing }}</td>
+                <td>
+                    <a href="{{ path('housing_show', {'id': housing.id}) }}">show</a>
+                    <a href="{{ path('housing_edit', {'id': housing.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('housing_new') }}">Create new</a>
+{% endblock %}

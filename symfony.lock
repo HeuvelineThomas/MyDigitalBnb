@@ -78,6 +78,9 @@
     "doctrine/sql-formatter": {
         "version": "1.1.1"
     },
+    "laminas/laminas-zendframework-bridge": {
+        "version": "1.1.1"
+    },
     "nikic/php-parser": {
         "version": "v4.10.2"
     },
@@ -85,7 +88,7 @@
         "version": "2.2.3"
     },
     "php": {
-        "version": "7.4"
+        "version": "7.3"
     },
     "psr/cache": {
         "version": "1.0.1"
