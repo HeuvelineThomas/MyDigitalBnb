@@ -60,12 +60,6 @@ class Housing
     private $city_housing;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="housings")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $housing_user;
-
-    /**
      * @ORM\OneToMany(targetEntity=Reservation::class, mappedBy="reservation_housing", orphanRemoval=true)
      */
     private $reservations;
@@ -177,17 +171,6 @@ class Housing
         return $this;
     }
 
-    public function getHousingUser(): ?User
-    {
-        return $this->housing_user;
-    }
-
-    public function setHousingUser(?User $housing_user): self
-    {
-        $this->housing_user = $housing_user;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Reservation[]

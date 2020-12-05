@@ -20,7 +20,6 @@ class HousingType extends AbstractType
             ->add('post_code_housing')
             ->add('city_housing')
             ->add('type_housing')
-            ->add('housing_user')
         ;
     }
 
