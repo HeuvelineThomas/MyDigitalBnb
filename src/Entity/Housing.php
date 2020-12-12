@@ -42,23 +42,28 @@ class Housing
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $address_housing;
+    private $type_housing;
+
+        /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $street_housing;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $type_housing;
+    private $post_code_housing;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="housings")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="string", length=255)
      */
-    private $housing_user;
+    private $city_housing;
 
     /**
      * @ORM\OneToMany(targetEntity=Reservation::class, mappedBy="reservation_housing", orphanRemoval=true)
      */
     private $reservations;
+
 
     public function __construct()
     {
@@ -118,18 +123,6 @@ class Housing
         return $this;
     }
 
-    public function getAddressHousing(): ?string
-    {
-        return $this->address_housing;
-    }
-
-    public function setAddressHousing(string $address_housing): self
-    {
-        $this->address_housing = $address_housing;
-
-        return $this;
-    }
-
     public function getTypeHousing(): ?string
     {
         return $this->type_housing;
@@ -142,17 +135,42 @@ class Housing
         return $this;
     }
 
-    public function getHousingUser(): ?User
+    public function getStreetHousing(): ?string
     {
-        return $this->housing_user;
+        return $this->street_housing;
     }
 
-    public function setHousingUser(?User $housing_user): self
+    public function setStreetHousing(string $street_housing): self
     {
-        $this->housing_user = $housing_user;
+        $this->street_housing = $street_housing;
 
         return $this;
     }
+
+    public function getPostCodeHousing(): ?string
+    {
+        return $this->post_code_housing;
+    }
+
+    public function setPostCodeHousing(string $post_code_housing): self
+    {
+        $this->post_code_housing = $post_code_housing;
+
+        return $this;
+    }
+
+    public function getCityHousing(): ?string
+    {
+        return $this->city_housing;
+    }
+
+    public function setCityHousing(string $city_housing): self
+    {
+        $this->city_housing = $city_housing;
+
+        return $this;
+    }
+
 
     /**
      * @return Collection|Reservation[]
@@ -183,4 +201,5 @@ class Housing
 
         return $this;
     }
+
 }
