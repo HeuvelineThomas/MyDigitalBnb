@@ -10,8 +10,7 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}
-            <nav class="navbar navbar-expand-md navbar-light custom-nav fixed-top">
+        <nav class="navbar navbar-expand-md navbar-light custom-nav fixed-top">
             {# <img class="ml-5" width="50" src='{{ asset('images/logo.png') }}'>  #}
             <a class="navbar-brand" href="{{ path('default') }}">MyDigitalBNB</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,6 +52,8 @@
                 </ul>
             </div>
         </nav>
+         {% block body %}
+            
         {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
