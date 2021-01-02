@@ -7,7 +7,9 @@ use App\Entity\Housing;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class HousingType extends AbstractType
 {
@@ -24,6 +26,9 @@ class HousingType extends AbstractType
             ->add('post_code_housing')
             ->add('city_housing')
             ->add('type_housing')
+            ->add('img_housing', FileType::class, [
+                'label' => 'Download an image'
+            ])
         ;
     }
 
