@@ -8,14 +8,13 @@
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
             {# <link rel="stylesheet" href="{{ assets('css/app.css') }}"/> #}
         {% endblock %}
+        
     </head>
     <body>
-            <nav class="navbar navbar-expand-md navbar-light custom-nav fixed-top">
+
+     <nav class="navbar navbar-expand-md navbar-light custom-nav">
             {# <img class="ml-5" width="50" src='{{ asset('images/logo.png') }}'>  #}
             <a class="navbar-brand" href="{{ path('default') }}">MyDigitalBNB</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
@@ -27,32 +26,16 @@
                     <li class="nav-item px-4">
                         <a class="nav-link" href="{{ path('housing_index') }}">{{ 'Housing'|trans }}</a>
                     </li>
-                    <div class="nav-item dropdown px-4">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{'Housing'|trans}}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="{{ path('housing_index') }}">{{ 'Housing'|trans }}</a>
-                            {# <a class="dropdown-item" href="{{ path('goal_index') }}">{{ 'Goals'|trans }}</a>
-                            <a class="dropdown-item" href="{{ path('location_index') }}">{{ 'Locations'|trans }}</a>
-                            <hr>
-                            <a class="dropdown-item" href="{{ path('trainee_index') }}">{{ 'Trainees'|trans }}</a>
-                            <a class="dropdown-item" href="{{ path('training_index') }}">{{ 'Trainings'|trans }}</a>
-                            <a class="dropdown-item" href="{{ path('company_index') }}">{{ 'Companies'|trans }}</a>
-                            <hr>
-                            <a class="dropdown-item" href="{{ path('user_index') }}">{{ 'Users'|trans }}</a> #}
-                        </div>
-                    </div>
-                    {# <li class="nav-item px-4">
-                        <a class="nav-link" href="" data-toggle="modal" data-target="#about">{{ 'About'|trans }}</a>
+                    <li class="nav-item px-4">
+                        <a class="nav-link" href="{{ path('reservation_index') }}">{{ 'Reservation'|trans }}</a>
                     </li>
-                    <li class="nav-item pl-4 pr-5">
-                        <a class="nav-link text-danger" href="{{ path('app_logout') }}"><i class="fas fa-sign-out-alt"></i></a>
-                    </li> #}
                 </ul>
             </div>
         </nav>
+    </div>
+        
         {% block body %}
+           
         {% endblock %}
         {% block javascripts %}
         <script src="https://kit.fontawesome.com/f0b6273a17.js" crossorigin="anonymous"></script>
