@@ -24,7 +24,10 @@
         "symfony/yaml": "5.1.*"
     },
     "require-dev": {
-        "symfony/maker-bundle": "^1.24"
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "symfony/maker-bundle": "^1.26",
+        "symfony/stopwatch": "^5.1",
+        "symfony/web-profiler-bundle": "^5.1"
     },
     "config": {
         "optimize-autoloader": true,
