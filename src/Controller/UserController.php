@@ -1,11 +1,8 @@
 <?php
-
 namespace App\Controller;
-
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,7 +15,6 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class UserController extends AbstractController
 {
     private $passwordEncoder;
-
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->passwordEncoder = $passwordEncoder;
@@ -32,7 +28,6 @@ class UserController extends AbstractController
             'users' => $userRepository->findAll(),
         ]);
     }
-
     /**
      * @Route("/new", name="user_new", methods={"GET","POST"})
      */
@@ -43,9 +38,8 @@ class UserController extends AbstractController
 
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
-            //Encoding of the password 
+            //Encoding of the password
             $user->setPassword($this->passwordEncoder->encodePassword(
                 $user,
                 $user->getPassword()
@@ -55,16 +49,13 @@ class UserController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
-
             return $this->redirectToRoute('user_index');
         }
-
         return $this->render('user/new.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);
     }
-
     /**
      * @Route("/{id}", name="user_show", methods={"GET"})
      */
@@ -74,7 +65,6 @@ class UserController extends AbstractController
             'user' => $user,
         ]);
     }
-
     /**
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
      */
@@ -82,7 +72,6 @@ class UserController extends AbstractController
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $user->setPassword($this->passwordEncoder->encodePassword(
                 $user,
@@ -90,16 +79,13 @@ class UserController extends AbstractController
             ));
             $user->setUpdatedAt(new \DateTime('now'));
             $this->getDoctrine()->getManager()->flush();
-
             return $this->redirectToRoute('user_index');
         }
-
         return $this->render('user/edit.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);
     }
-
     /**
      * @Route("/{id}", name="user_delete", methods={"DELETE"})
      */
@@ -110,7 +96,6 @@ class UserController extends AbstractController
             $entityManager->remove($user);
             $entityManager->flush();
         }
-
         return $this->redirectToRoute('user_index');
     }
 }

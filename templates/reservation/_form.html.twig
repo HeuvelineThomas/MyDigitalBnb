@@ -1,4 +1,23 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<div class="container">
+    {{ form_start(form) }}
+
+        <h5>{{'Arrival date reservation'|trans}}</h5>
+            {{ form_errors(form.arrival_date_reservation) }}
+            {{ form_widget(form.arrival_date_reservation, {'attr': {'class': 'form-control mb-3', 'style': 'width: 250px'}}) }}
+
+        <h5>{{'Departude date reservation'|trans}}</h5>
+            {{ form_errors(form.departude_date_reservation) }}
+            {{ form_widget(form.departude_date_reservation, {'attr': {'class': 'form-control mb-3', 'style': 'width: 250px'}}) }}
+
+        <h5>{{'Date reservation'|trans}}</h5>
+            {{ form_errors(form.date_reservation) }}
+            {{ form_widget(form.date_reservation, {'attr': {'class': 'form-control mb-3', 'style': 'width: 250px'}}) }}
+
+        <h5>{{'Reservation housing'|trans}}</h5>
+            {{ form_errors(form.reservation_housing) }}
+            {{ form_widget(form.reservation_housing, {'attr': {'class': 'form-control mb-3', 'style': 'width:250px'}}) }}
+
+        {{ form_widget(form) }}
+        <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+</div>

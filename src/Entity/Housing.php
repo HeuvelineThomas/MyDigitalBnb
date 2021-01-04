@@ -75,6 +75,10 @@ class Housing
         $this->reservations = new ArrayCollection();
     }
 
+    public function __toString() {
+        return $this->title_housing;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
