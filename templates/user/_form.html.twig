@@ -2,7 +2,6 @@
 
     {{ form_start(form) }}
  
-        
         <h5>{{'E-mail'|trans}}</h5>
             {{ form_errors(form.email) }}
             {{ form_widget(form.email, {'attr': {'class': 'form-control mb-3'}}) }}
@@ -12,8 +11,8 @@
             {{ form_widget(form.password, {'attr': {'class': 'form-control mb-3'}}) }}
 
         <h5>{{'First name'|trans}}</h5>
-            {{ form_errors(form.firstnam_user) }}
-            {{ form_widget(form.firstnam_user, {'attr': {'class': 'form-control mb-3'}}) }}
+            {{ form_errors(form.firstname_user) }}
+            {{ form_widget(form.firstname_user, {'attr': {'class': 'form-control mb-3'}}) }}
 
         <h5>{{'Name : '|trans}}</h5>
             {{ form_errors(form.name_user) }}
