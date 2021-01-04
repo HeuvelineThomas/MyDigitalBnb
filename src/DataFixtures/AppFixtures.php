@@ -28,6 +28,7 @@ class AppFixtures extends Fixture
             $housing->setStreetHousing($faker->streetName());
             $housing->setPostCodeHousing($faker->postcode());
             $housing->setCityHousing($faker->city());
+            $housing->setImgHousing($faker->word());
 
             // On fait persister les données
             $manager->persist($housing);
