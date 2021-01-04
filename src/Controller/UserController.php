@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 /**
@@ -24,6 +25,8 @@ class UserController extends AbstractController
      */
     public function index(UserRepository $userRepository): Response
     {
+
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');  //administrators are the only who have access to all the account 
         return $this->render('user/index.html.twig', [
             'users' => $userRepository->findAll(),
         ]);
