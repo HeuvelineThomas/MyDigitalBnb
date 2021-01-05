@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @author Thomas Heuveline
  * @ORM\Entity(repositoryClass=HousingRepository::class)
  */
 class Housing

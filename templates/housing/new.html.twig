@@ -7,8 +7,10 @@
         <h1>{{'Create new Housing'|trans}}</h1>
         <hr>
 
+        {# Inclusion du formulaire #}
         {{ include('housing/_form.html.twig') }}
 
+        {# Bouton retour à la liste #}
         <a class="btn btn-primary mt-3" href="{{ path('housing_index') }}">{{'back to list'|trans}}</a>
     </div>
 {% endblock %}

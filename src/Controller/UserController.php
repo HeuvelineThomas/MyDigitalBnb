@@ -11,6 +11,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 
 /**
+ * @author Sarah Pioline Benourdja
  * @Route("/user")
  */
 class UserController extends AbstractController
@@ -22,6 +23,7 @@ class UserController extends AbstractController
     }
     /**
      * @Route("/", name="user_index", methods={"GET"})
+     * Liste des utilisateurs
      */
     public function index(UserRepository $userRepository): Response
     {
@@ -33,6 +35,7 @@ class UserController extends AbstractController
     }
     /**
      * @Route("/new", name="user_new", methods={"GET","POST"})
+     * Création d'un utilisateur
      */
     public function new(Request $request): Response
     {
@@ -61,6 +64,7 @@ class UserController extends AbstractController
     }
     /**
      * @Route("/{id}", name="user_show", methods={"GET"})
+     * Affichage d'un l'utilisateur 
      */
     public function show(User $user): Response
     {
@@ -70,6 +74,7 @@ class UserController extends AbstractController
     }
     /**
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
+     * Modification d'un utilisateur
      */
     public function edit(Request $request, User $user): Response
     {
@@ -80,6 +85,7 @@ class UserController extends AbstractController
                 $user,
                 $user->getPassword()
             ));
+            //Mise à jour automatique de l'heure    
             $user->setUpdatedAt(new \DateTime('now'));
             $this->getDoctrine()->getManager()->flush();
             return $this->redirectToRoute('user_index');
@@ -91,6 +97,7 @@ class UserController extends AbstractController
     }
     /**
      * @Route("/{id}", name="user_delete", methods={"DELETE"})
+     * Suppression d'un utilisateur
      */
     public function delete(Request $request, User $user): Response
     {

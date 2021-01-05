@@ -6,6 +6,7 @@ use App\Repository\ReservationRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @author Thomas Heuveline
  * @ORM\Entity(repositoryClass=ReservationRepository::class)
  */
 class Reservation

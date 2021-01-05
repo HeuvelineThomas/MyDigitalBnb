@@ -17,7 +17,9 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController',
+            //récupérer tous les logements
             'housing' => $hr->findAll(),
+            //récupérer toutes les réservations
             'reservations' => $rr->findAll()
         ]);
     }
