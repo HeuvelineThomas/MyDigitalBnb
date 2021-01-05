@@ -35,6 +35,13 @@ class HousingController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $image = $form->get('img_housing')->getData();
+            $fichier = md5(uniqid()). '.' . $image->guessExtension();
+            $image->move(
+                $this->getParameter('image_directory'),
+                $fichier
+            );
+            $housing->setImgHousing($fichier);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($housing);
             $entityManager->flush();
@@ -67,6 +74,15 @@ class HousingController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $image = $form->get('img_housing')->getData();
+            $fichier = md5(uniqid()). '.' . $image->guessExtension();
+            $image->move(
+                $this->getParameter('image_directory'),
+                $fichier
+            );
+            $housing->setImgHousing($fichier);
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('housing_index');

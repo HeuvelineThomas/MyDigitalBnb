@@ -6,16 +6,28 @@
 
     <div class="container">
 
-        <h1>Dernières annonces mises en ligne</h1>
+        <h1>Dernières annonces mises en ligne </h1>
+        <hr>
+        <br>
+                        
             <div class="row">
             {% for housing in housing|reverse %}
-                    <div class="col-lg-6">
-                        <img src={{ housing.imgHousing }} alt="">
-                        {{ housing.id ~ ", " ~ housing.titleHousing ~ ", " ~ housing.pricePerNightHousing ~ "€/night " ~ housing.typeHousing ~ " in " ~ housing.cityHousing }}<br>
-                        {% if is_granted('ROLE_USER') %}
-                        <a href="{{ path('reservation_new', {'id_housing': housing.id}) }}">To book</a>
-                        {%endif%}
+                <div class="col-6 mb-3">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src='{{ 'images/'~ housing.imgHousing }}' alt="" width="150px"><br>
+                        </div>
+                        <div class="col-lg-8">
+                            <h2>{{ housing.titleHousing ~ " - " ~ housing.typeHousing}}</h2>
+                            <p>{{ housing.descriptionHousing }}</p>
+                            <p>{{housing.pricePerNightHousing ~ "€/night"}}</p>
+                            <p>{{ housing.cityHousing }}</p>
+                            {% if is_granted('ROLE_USER') %}
+                                <a class=" btn btn-primary" href="{{ path('reservation_new', {'id_housing': housing.id}) }}">To book</a>
+                            {% endif %}
+                        </div>
                     </div>
+                </div>
             {% endfor %}
             </div>  
 
@@ -37,7 +49,7 @@
         </div>
     </div>
     
-    <div class="text-center fixed-bottom">
+    <div class="text-center">
         <h5 class="h5 font-weight-normal">©{{ "now"|date("Y") }} - MyDigitalBNB</h5>
     </div>
 
