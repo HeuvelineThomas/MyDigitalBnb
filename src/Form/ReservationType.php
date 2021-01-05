@@ -21,6 +21,9 @@ class ReservationType extends AbstractType
                 ])  
             ->add('date_reservation', DateTimeType::class, [
                 'widget' => 'single_text',
+                'attr' => array(
+                    'readonly' => true,
+                ),
                 ]) 
             ->add('reservation_housing')
         ;

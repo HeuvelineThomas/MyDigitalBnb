@@ -253,6 +253,14 @@
         <source>new Reservation</source>
         <target>Nouvelle réservation</target>
       </trans-unit>
+      <trans-unit id="txDCRjn" resname="Create new Reservation">
+        <source>Create new Reservation</source>
+        <target>Créer une nouvelle réservation</target>
+      </trans-unit>
+      <trans-unit id="FQn1YfJ" resname="Save">
+        <source>Save</source>
+        <target>Enregistrer</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

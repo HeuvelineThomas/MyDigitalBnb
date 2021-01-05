@@ -3,6 +3,7 @@
 {% block title %}Reservation{% endblock %}
 
 {% block body %}
+<div class="container">
     <h1>Reservation</h1>
 
     <table class="table">
@@ -33,8 +34,9 @@
             </tr>
         </tbody>
     </table>
+</div>
 
-    <a href="{{ path('reservation_index') }}">{{'back to list'|trans}}</a>
+    <a class = "btn btn-primary " href="{{ path('reservation_index') }}">{{'back to list'|trans}}</a>
 
     {% if is_granted('ROLE_ADMIN') %}
         <a href="{{ path('reservation_edit', {'id': reservation.id}) }}">{{'edit'|trans}}</a>

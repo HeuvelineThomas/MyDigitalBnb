@@ -4,13 +4,13 @@
 
 {% block body %}
     <div class="container">
-        <h1>Create {{'new Reservation'|trans}}</h1>
+        <h1>{{'Create new Reservation'|trans}}</h1>
         <hr>
 
     
         {# {{dump(app.request.get('id_housing'))}} #}
         {{ include('reservation/_form.html.twig') }}
 
-        <a class="btn btn-primary mt-3" href="{{ path('reservation_index') }}">{{'back to list'}}</a>
+        <a class="btn btn-primary mt-3" href="{{ path('reservation_index') }}">{{'back to list'|trans}}</a>
     </div>
 {% endblock %}

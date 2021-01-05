@@ -50,6 +50,8 @@ class ReservationController extends AbstractController
         $user = $ur->findOneById($id_user);
         //Sauvegarde de l'instance User correspondant à l'id récupéré
         $reservation->setReservationUserId($user);
+        //Date automatique
+        $reservation->setDateReservation(new \DateTime('now')) ;
         $form = $this->createForm(ReservationType::class, $reservation);
         $form->handleRequest($request);
 
