@@ -12,7 +12,9 @@
                     <div class="col-lg-6">
                         <img src={{ housing.imgHousing }} alt="">
                         {{ housing.id ~ ", " ~ housing.titleHousing ~ ", " ~ housing.pricePerNightHousing ~ "€/night " ~ housing.typeHousing ~ " in " ~ housing.cityHousing }}<br>
+                        {% if is_granted('ROLE_USER') %}
                         <a href="{{ path('reservation_new', {'id_housing': housing.id}) }}">To book</a>
+                        {%endif%}
                     </div>
             {% endfor %}
             </div>  
