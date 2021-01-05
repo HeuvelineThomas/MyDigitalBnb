@@ -27,8 +27,8 @@ class HousingType extends AbstractType
             ->add('city_housing')
             ->add('type_housing')
             ->add('img_housing', FileType::class, [
-                'label' => 'Download an image'
-            ])
+                'label' => 'Download an image',
+                'data_class' => null            ])
         ;
     }
 

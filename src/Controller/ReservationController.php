@@ -3,12 +3,15 @@
 namespace App\Controller;
 
 use App\Entity\Reservation;
+use App\Form\HousingType;
 use App\Form\ReservationType;
+use App\Repository\HousingRepository;
 use App\Repository\ReservationRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/reservation")
@@ -28,9 +31,15 @@ class ReservationController extends AbstractController
     /**
      * @Route("/new", name="reservation_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, HousingRepository $hr, UserRepository $ur): Response
     {
         $reservation = new Reservation();
+        $id_housing = $request->query->get('id_housing');
+        $id_user = $this->getUser()->getId();
+        $housing = $hr->findOneById($id_housing);
+        $reservation->setReservationHousing($housing);
+        $user = $ur->findOneById($id_user);
+        $reservation->setReservationUserId($user);
         $form = $this->createForm(ReservationType::class, $reservation);
         $form->handleRequest($request);
 

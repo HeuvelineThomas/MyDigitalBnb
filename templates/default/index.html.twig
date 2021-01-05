@@ -11,7 +11,8 @@
             {% for housing in housing|reverse %}
                     <div class="col-lg-6">
                         <img src={{ housing.imgHousing }} alt="">
-                        {{ housing.titleHousing ~ ", " ~ housing.pricePerNightHousing ~ "€/night " ~ housing.typeHousing ~ " in " ~ housing.cityHousing }}<br>
+                        {{ housing.id ~ ", " ~ housing.titleHousing ~ ", " ~ housing.pricePerNightHousing ~ "€/night " ~ housing.typeHousing ~ " in " ~ housing.cityHousing }}<br>
+                        <a href="{{ path('reservation_new', {'id_housing': housing.id}) }}">To book</a>
                     </div>
             {% endfor %}
             </div>  
