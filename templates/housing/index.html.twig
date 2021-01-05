@@ -32,8 +32,10 @@
                     <td>{{ housing.typeHousing }}</td>
                     <td>
                             <a class="btn btn-secondary" href="{{ path('housing_show', {'id': housing.id}) }}"><i class="fas fa-eye"></i></a>
+                            {% if is_granted('ROLE_ADMIN') %}
                             <a class="btn btn-warning" href="{{ path('housing_edit', {'id': housing.id}) }}"><i class="fas fa-edit"></i></a>
                             <a class="btn btn-danger" href="{{ path('housing_delete', {'id': housing.id}) }}"><i class="fas fa-trash-alt"></i></a>
+                            {% endif %}
                     </td>
                 </tr>
             {% else %}
@@ -44,6 +46,7 @@
             </tbody>
         </table>
     </div>
-
+    {% if is_granted('ROLE_ADMIN') %}
     <a class="btn btn-primary" href="{{ path('housing_new') }}">{{'Create new'|trans}}</a>
+    {% endif %}
 {% endblock %}

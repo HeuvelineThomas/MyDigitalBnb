@@ -11,7 +11,7 @@
         
     </head>
     <body>
-
+    {% if is_granted('ROLE_ADMIN') %}
      <nav class="navbar navbar-expand-md navbar-light custom-nav">
             {# <img class="ml-5" width="50" src='{{ asset('images/logo.png') }}'>  #}
             <a class="navbar-brand" href="{{ path('default') }}">MyDigitalBNB</a>
@@ -29,6 +29,9 @@
                     <li class="nav-item px-4">
                         <a class="nav-link" href="{{ path('reservation_index') }}">{{ 'Reservation'|trans }}</a>
                     </li>
+                    <li class="nav-item px-4">
+                        <a class="nav-link" href="{{ path('user_index') }}">{{ 'User'|trans }}</a>
+                    </li>
                     {% if app.user %}
                         <li class="nav-item px-4">
                             <div class="mb-3">
@@ -36,11 +39,60 @@
                             </div>
                          </li>
                     {% endif %}
+                   
                 </ul>
             </div>
         </nav>
     </div>
-        
+    {% elseif is_granted('ROLE_USER') %}
+        <nav class="navbar navbar-expand-md navbar-light custom-nav">
+            {# <img class="ml-5" width="50" src='{{ asset('images/logo.png') }}'>  #}
+            <a class="navbar-brand" href="{{ path('default') }}">MyDigitalBNB</a>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <ul class="navbar-nav px-5">
+                    <li class="nav-item px-4">
+                        <a class="nav-link" href="{{ path('default') }}">{{ 'Home'|trans }}</a>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a class="nav-link" href="{{ path('housing_index') }}">{{ 'Housing'|trans }}</a>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a class="nav-link" href="{{ path('reservation_index') }}">{{ 'Reservation'|trans }}</a>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a class="nav-link" href="{{ path('user_index') }}{{app.user.id}}">{{ 'My account'|trans }}</a>
+                    </li>
+                    
+                    <li class="nav-item px-4">
+                        <a class="nav-link" href="{{ path('app_logout') }}">{{ 'Logout'|trans }}</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    {% else %}
+        <nav class="navbar navbar-expand-md navbar-light custom-nav">
+            {# <img class="ml-5" width="50" src='{{ asset('images/logo.png') }}'>  #}
+            <a class="navbar-brand" href="{{ path('default') }}">MyDigitalBNB</a>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                <ul class="navbar-nav px-5">
+                    <li class="nav-item px-4">
+                        <a class="nav-link" href="{{ path('default') }}">{{ 'Home'|trans }}</a>
+                    </li>
+                    <li class="nav-item px-4">
+                        <a class="nav-link" href="{{ path('app_login') }}">{{ 'Login'|trans }}</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    {% endif %}
         {% block body %}
            
         {% endblock %}
