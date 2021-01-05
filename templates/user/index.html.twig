@@ -13,14 +13,12 @@
                     <th>{{'Id'|trans}}</th>
                     <th>{{'Email'|trans}}</th>
                     <th>{{'Roles'|trans}}</th>
-                    <th>{{'Firstname user'|trans}}</th>
-                    <th>{{'Name user'|trans}}</th>
-                    <th>{{'Phone number user'|trans}}</th>
-                    <th>{{'Created at'|trans}}</th>
-                    <th>{{'Updated at'|trans}}</th>
-                    <th>{{'Street user'|trans}}</th>
-                    <th>{{'Post code user'|trans}}</th>
-                    <th>{{'City user'|trans}}</th>
+                    <th>{{'Firstname'|trans}}</th>
+                    <th>{{'Name'|trans}}</th>
+                    <th>{{'Phone number'|trans}}</th>
+                    <th>{{'Street'|trans}}</th>
+                    <th>{{'Post code'|trans}}</th>
+                    <th>{{'City'|trans}}</th>
                     <th>{{'Actions'|trans}}</th>
                 </tr>
             </thead>
@@ -33,8 +31,6 @@
                     <td>{{ user.firstnameUser }}</td>
                     <td>{{ user.nameUser }}</td>
                     <td>{{ user.phoneNumberUser }}</td>
-                    <td>{{ user.createdAt ? user.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                    <td>{{ user.updatedAt ? user.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                     <td>{{ user.streetUser }}</td>
                     <td>{{ user.postCodeUser }}</td>
                     <td>{{ user.cityUser }}</td>

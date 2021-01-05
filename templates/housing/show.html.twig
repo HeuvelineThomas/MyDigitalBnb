@@ -1,47 +1,49 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Housing{% endblock %}
+{% block title %}{{'Housing'|trans}}{% endblock %}
 
 {% block body %}
-    <h1>Housing</h1>
+    <h1>{{'Housing'|trans}}</h1>
     <div class="container">
         <table class="table">
             <tbody>
                 <tr>
-                    <th>Id</th>
+                    <th>{{'Id'|trans}}</th>
                     <td>{{ housing.id }}</td>
                 </tr>
                 <tr>
-                    <th>Title_housing</th>
+                    <th>{{'Title'|trans}}</th>
                     <td>{{ housing.titleHousing }}</td>
                 </tr>
                 <tr>
-                    <th>Description_housing</th>
+                    <th>{{'Description'|trans}}</th>
                     <td>{{ housing.descriptionHousing }}</td>
                 </tr>
                 <tr>
-                    <th>Disponibility_housing</th>
+                    <th>{{'Disponibility'|trans}}</th>
                     <td>{{ housing.disponibilityHousing ? housing.disponibilityHousing|date('Y-m-d H:i:s') : '' }}</td>
                 </tr>
                 <tr>
-                    <th>Price_per_night_housing</th>
+                    <th>{{'Price_per_night'|trans}}</th>
                     <td>{{ housing.pricePerNightHousing }}</td>
                 </tr>
                 <tr>
-                    <th>Address_housing</th>
+                    <th>{{'Address'|trans}}</th>
                     <td>{{ housing.streetHousing}} {{ housing.postCodeHousing }} {{ housing.cityHousing}} </td>
                 </tr>
                 <tr>
-                    <th>Type_housing</th>
+                    <th>{{'Type'|trans}}</th>
                     <td>{{ housing.typeHousing }}</td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <a class="btn btn-primary" href="{{ path('housing_index') }}">back to list</a>
+    <a class="btn btn-primary" href="{{ path('housing_index') }}">{{'back to list'|trans}}</a>
+
     {% if is_granted('ROLE_ADMIN') %}
-    <a class="btn btn-warning" href="{{ path('housing_edit', {'id': housing.id}) }}">edit</a>
-    
-    {{ include('housing/_delete_form.html.twig') }}
-    {%endif%}
+        <a class="btn btn-warning" href="{{ path('housing_edit', {'id': housing.id}) }}">{{'edit'|trans}}</a>
+        
+        {{ include('housing/_delete_form.html.twig') }}
+    {% endif %}
+
 {% endblock %}

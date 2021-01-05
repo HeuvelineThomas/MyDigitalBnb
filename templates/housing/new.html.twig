@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Housing{% endblock %}
+{% block title %}{{'New Housing'|trans}}{% endblock %}
 
 {% block body %}
     <div class="container">
-        <h1>Create new Housing</h1>
+        <h1>{{'Create new Housing'|trans}}</h1>
         <hr>
 
         {{ include('housing/_form.html.twig') }}
 
-        <a href="{{ path('housing_index') }}">back to list</a>
+        <a class="btn btn-primary mt-3" href="{{ path('housing_index') }}">{{'back to list'|trans}}</a>
     </div>
 {% endblock %}

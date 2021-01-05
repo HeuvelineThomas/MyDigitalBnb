@@ -44,6 +44,10 @@ class Reservation
      */
     private $reservation_user_id;
 
+    public function __toString() {
+        return $this->id;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

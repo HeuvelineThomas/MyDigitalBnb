@@ -20,10 +20,10 @@
                         <div class="col-lg-8">
                             <h2>{{ housing.titleHousing ~ " - " ~ housing.typeHousing}}</h2>
                             <p>{{ housing.descriptionHousing }}</p>
-                            <p>{{housing.pricePerNightHousing ~ "€/night"}}</p>
+                            <p>{{housing.pricePerNightHousing ~ {{"€/night"|trans}} }}</p>
                             <p>{{ housing.cityHousing }}</p>
                             {% if is_granted('ROLE_USER') %}
-                                <a class=" btn btn-primary" href="{{ path('reservation_new', {'id_housing': housing.id}) }}">To book</a>
+                                <a class=" btn btn-primary" href="{{ path('reservation_new', {'id_housing': housing.id}) }}">{{'To book'|trans}}</a>
                             {% endif %}
                         </div>
                     </div>

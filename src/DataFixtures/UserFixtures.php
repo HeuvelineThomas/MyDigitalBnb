@@ -27,7 +27,20 @@ class UserFixtures extends Fixture
             $user,
             '123456'
         ));
-        $user->setCreatedAt(DateTime::createFromFormat('j-M-Y', '15-Feb-2009'));
+        $user->setCreatedAt(new \DateTime('now'));
+
+
+
+        $manager->persist($user);
+
+        $user = new User();
+        $user->setEmail('admin@gmail.com');
+        $user->setRoles(['ROLE_ADMIN']);
+        $user->setPassword($this->passwordEncoder->encodePassword(
+            $user,
+            '123456'
+        ));
+        $user->setCreatedAt(new \DateTime('now'));
 
 
         $manager->persist($user);
