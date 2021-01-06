@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="OnhpU4i" resname="Home">
+        <source>Home</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="dvWtZyL" resname="Housing">
+        <source>Housing</source>
+        <target>Logement</target>
+      </trans-unit>
+      <trans-unit id="tFbm1a5" resname="Reservation">
+        <source>Reservation</source>
+        <target>Réservation</target>
+      </trans-unit>
+      <trans-unit id="tRLZfny" resname="User">
+        <source>User</source>
+        <target>Utilisateur</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Se déconnecter</target>
+      </trans-unit>
+      <trans-unit id="tTGBpNh" resname="My account">
+        <source>My account</source>
+        <target>Mon compte</target>
+      </trans-unit>
+      <trans-unit id="nWMiwfT" resname="Login">
+        <source>Login</source>
+        <target>Se connecter</target>
+      </trans-unit>
+      <trans-unit id="D3sOfjX" resname="Edit Housing">
+        <source>Edit Housing</source>
+        <target>Modification logement</target>
+      </trans-unit>
+      <trans-unit id="U0M9PNE" resname="back to list">
+        <source>back to list</source>
+        <target>Retour à la liste</target>
+      </trans-unit>
+      <trans-unit id="QWWhaTz" resname="Housing index">
+        <source>Housing index</source>
+        <target>Liste des logements</target>
+      </trans-unit>
+      <trans-unit id="EhVukhv" resname="Id">
+        <source>Id</source>
+        <target>Id</target>
+      </trans-unit>
+      <trans-unit id="fozSBW2" resname="Title">
+        <source>Title</source>
+        <target>Titre</target>
+      </trans-unit>
+      <trans-unit id="Um4Ah8w" resname="Description">
+        <source>Description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="6j4bxtv" resname="Disponibility">
+        <source>Disponibility</source>
+        <target>Disponibilité</target>
+      </trans-unit>
+      <trans-unit id="bBXt_zR" resname="Price per night">
+        <source>Price per night</source>
+        <target>Prix par nuit</target>
+      </trans-unit>
+      <trans-unit id="Vu_PIJV" resname="Address">
+        <source>Address</source>
+        <target>Adresse</target>
+      </trans-unit>
+      <trans-unit id="uq3fcPt" resname="Type">
+        <source>Type</source>
+        <target>Type</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions">
+        <source>Actions</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="bi6mN7M" resname="No records found">
+        <source>No records found</source>
+        <target>Aucun enregistrement dans la base</target>
+      </trans-unit>
+      <trans-unit id="nz33U6Q" resname="Create new">
+        <source>Create new</source>
+        <target>Créer un nouveau</target>
+      </trans-unit>
+      <trans-unit id="YpEu_pD" resname="New Housing">
+        <source>New Housing</source>
+        <target>Nouveau logement</target>
+      </trans-unit>
+      <trans-unit id="vnnwDLy" resname="Create new Housing">
+        <source>Create new Housing</source>
+        <target>Créer un nouveau logement</target>
+      </trans-unit>
+      <trans-unit id="JiEhxTc" resname="edit">
+        <source>edit</source>
+        <target>modifier</target>
+      </trans-unit>
+      <trans-unit id="4tClSWj" resname="Delete">
+        <source>Delete</source>
+        <target>Supprimer</target>
+      </trans-unit>
+      <trans-unit id="xmZZHfB" resname="Street">
+        <source>Street</source>
+        <target>Rue</target>
+      </trans-unit>
+      <trans-unit id="_nUxZic" resname="Post code">
+        <source>Post code</source>
+        <target>Code postal</target>
+      </trans-unit>
+      <trans-unit id=".DP3Mkb" resname="City">
+        <source>City</source>
+        <target>Ville</target>
+      </trans-unit>
+      <trans-unit id="GqTLC8y" resname="Image">
+        <source>Image</source>
+        <target>Image</target>
+      </trans-unit>
+      <trans-unit id="_TXZktC" resname="Edit Reservation">
+        <source>Edit Reservation</source>
+        <target>Modifier réservation</target>
+      </trans-unit>
+      <trans-unit id="mgqbqWd" resname="Reservation index">
+        <source>Reservation index</source>
+        <target>Liste des réservations</target>
+      </trans-unit>
+      <trans-unit id="5HRQ4pD" resname="Arrival date">
+        <source>Arrival date</source>
+        <target>Date d'arrivé</target>
+      </trans-unit>
+      <trans-unit id="rZkuCtS" resname="Departude date">
+        <source>Departude date</source>
+        <target>Date de départ</target>
+      </trans-unit>
+      <trans-unit id="mcQKtAW" resname="Date">
+        <source>Date</source>
+        <target>Date</target>
+      </trans-unit>
+      <trans-unit id="kjFK3W7" resname="New Reservation">
+        <source>New Reservation</source>
+        <target>Nouvelle réservation</target>
+      </trans-unit>
+      <trans-unit id="5876bst" resname="Arrival date reservation">
+        <source>Arrival date reservation</source>
+        <target>Date d'arrivé réservation</target>
+      </trans-unit>
+      <trans-unit id="tERYZcH" resname="Departude date reservation">
+        <source>Departude date reservation</source>
+        <target>Date de départ réservation</target>
+      </trans-unit>
+      <trans-unit id="dgCJqgZ" resname="Date reservation">
+        <source>Date reservation</source>
+        <target>Date de réservation</target>
+      </trans-unit>
+      <trans-unit id="6MS5AW0" resname="Reservation housing">
+        <source>Reservation housing</source>
+        <target>Logement réservé</target>
+      </trans-unit>
+      <trans-unit id="hgM.daT" resname="Create an account">
+        <source>Create an account</source>
+        <target>Créer un compte</target>
+      </trans-unit>
+      <trans-unit id="BbiNGPw" resname="Edit user">
+        <source>Edit user</source>
+        <target>Modifier un utilisateur</target>
+      </trans-unit>
+      <trans-unit id="ezuwN7u" resname="User index">
+        <source>User index</source>
+        <target>Liste des utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="wlM3BVR" resname="Roles">
+        <source>Roles</source>
+        <target>Rôles</target>
+      </trans-unit>
+      <trans-unit id="ZHz6kbI" resname="Firstname">
+        <source>Firstname</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="3NHVIj9" resname="Name">
+        <source>Name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="MG8bsgZ" resname="Phone number">
+        <source>Phone number</source>
+        <target>Numéro de téléphone</target>
+      </trans-unit>
+      <trans-unit id="Y4T.p3E" resname="New user">
+        <source>New user</source>
+        <target>Nouvel utilisateur</target>
+      </trans-unit>
+      <trans-unit id="g36VwXo" resname="Create new User">
+        <source>Create new User</source>
+        <target>Créer un nouvel utilisateur</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="1kMk7XW" resname="Phone_number">
+        <source>Phone_number</source>
+        <target>Numéro de téléphone</target>
+      </trans-unit>
+      <trans-unit id="S9iCKr8" resname="Created_at">
+        <source>Created_at</source>
+        <target>Créé à</target>
+      </trans-unit>
+      <trans-unit id="0Y.II8I" resname="Updated_at">
+        <source>Updated_at</source>
+        <target>Modifié à</target>
+      </trans-unit>
+      <trans-unit id="hIZFnvi" resname="Post_code">
+        <source>Post_code</source>
+        <target>Code postal</target>
+      </trans-unit>
+      <trans-unit id="JVDZYuU" resname="E-mail">
+        <source>E-mail</source>
+        <target>E-mail</target>
+      </trans-unit>
+      <trans-unit id="cC75Ie0" resname="First name">
+        <source>First name</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="ltCkrCl" resname="Price_per_night">
+        <source>Price_per_night</source>
+        <target>Prix par nuit</target>
+      </trans-unit>
+      <trans-unit id="90.INPj" resname="Latest listings posted online">
+        <source>Latest listings posted online</source>
+        <target>Dernière(s) annonce(s) mise(s) en ligne</target>
+      </trans-unit>
+      <trans-unit id="hE7lIvK" resname="€/night">
+        <source>€/night</source>
+        <target>€/nuit</target>
+      </trans-unit>
+      <trans-unit id="mOGyjeW" resname="To book">
+        <source>To book</source>
+        <target>Réserver</target>
+      </trans-unit>
+      <trans-unit id="PZakWBI" resname="recorded">
+        <source>recorded</source>
+        <target>enregistré(es)</target>
+      </trans-unit>
+      <trans-unit id="PLj1iIW" resname="Type housing">
+        <source>Type housing</source>
+        <target>Type de logement</target>
+      </trans-unit>
+      <trans-unit id="7xpkpru" resname="new Reservation">
+        <source>new Reservation</source>
+        <target>Nouvelle réservation</target>
+      </trans-unit>
+      <trans-unit id="txDCRjn" resname="Create new Reservation">
+        <source>Create new Reservation</source>
+        <target>Créer une nouvelle réservation</target>
+      </trans-unit>
+      <trans-unit id="FQn1YfJ" resname="Save">
+        <source>Save</source>
+        <target>Enregistrer</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

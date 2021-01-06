@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @author Thomas Heuveline
  * @ORM\Entity(repositoryClass=HousingRepository::class)
  */
 class Housing
@@ -64,10 +65,19 @@ class Housing
      */
     private $reservations;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $img_housing;
+
 
     public function __construct()
     {
         $this->reservations = new ArrayCollection();
+    }
+
+    public function __toString() {
+        return $this->title_housing;
     }
 
     public function getId(): ?int
@@ -198,6 +208,18 @@ class Housing
                 $reservation->setReservationHousing(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImgHousing(): ?string
+    {
+        return $this->img_housing;
+    }
+
+    public function setImgHousing(string $img_housing): self
+    {
+        $this->img_housing = $img_housing;
 
         return $this;
     }

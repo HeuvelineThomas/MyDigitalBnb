@@ -1,20 +1,58 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DefaultController!{% endblock %}
+{% block title %}MyDigitalBNB{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-{# <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="container">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Thomas/Documents/MYDIGITALSCHOOL/cours/mydigitalbnb/MyDigitalBnb/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Thomas/Documents/MYDIGITALSCHOOL/cours/mydigitalbnb/MyDigitalBnb/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
-    </ul>
-</div> #}
+        <h1>{{'Latest listings posted online'|trans}} </h1>
+        <hr>
+        <br>
+                        
+            <div class="row">
+            {% for housing in housing|reverse %}
+                <div class="col-6 mb-3">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src='{{ 'images/'~ housing.imgHousing }}' alt="" width="150px"><br>
+                        </div>
+                        <div class="col-lg-8">
+                            <h2>{{ housing.titleHousing ~ " - " ~ housing.typeHousing}}</h2>
+                            <p>{{ housing.descriptionHousing }}</p>
+                            <p>{{housing.pricePerNightHousing ~ "€/night"|trans }}</p>
+                            <p>{{ housing.cityHousing ~ ", " ~ housing.postCodeHousing }}</p>
+
+                            {# Utilisateur connecté en tant que simple utilisateur #}
+                            {% if is_granted('ROLE_USER') %}
+                                <a class=" btn btn-primary" href="{{ path('reservation_new', {'id_housing': housing.id}) }}">{{'To book'|trans}}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>  
+
+        <div class="container">
+
+        <div class="row mt-5">
+            <div class="col text-center">
+                <h1 class='stats-nb'>{{ housing|length }}</h1>
+                <h4>{{'Housing'|trans}}</h4>
+                <h4>{{'recorded'|trans}}</h4>
+            </div>
+
+            <div class="col text-center">
+                <h1 class='stats-nb'>{{ reservations|length }}</h1>
+                <h4>{{'Reservation'|trans}}</h4>
+                <h4>{{'recorded'|trans}}</h4>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="text-center">
+        <h5 class="h5 font-weight-normal">©{{ "now"|date("Y") }} - MyDigitalBNB</h5>
+    </div>
+
 {% endblock %}

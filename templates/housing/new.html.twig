@@ -1,11 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Housing{% endblock %}
+{% block title %}{{'New Housing'|trans}}{% endblock %}
 
 {% block body %}
-    <h1>Create new Housing</h1>
+    <div class="container">
+        <h1>{{'Create new Housing'|trans}}</h1>
+        <hr>
 
-    {{ include('housing/_form.html.twig') }}
+        {# Inclusion du formulaire #}
+        {{ include('housing/_form.html.twig') }}
 
-    <a href="{{ path('housing_index') }}">back to list</a>
+        {# Bouton retour à la liste #}
+        <a class="btn btn-primary mt-3" href="{{ path('housing_index') }}">{{'back to list'|trans}}</a>
+    </div>
 {% endblock %}

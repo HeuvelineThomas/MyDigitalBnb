@@ -1,13 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Housing{% endblock %}
+{% block title %}{{'Edit Housing'|trans}}{% endblock %}
 
 {% block body %}
-    <h1>Edit Housing</h1>
+    <h1>{{'Edit Housing'|trans}}</h1>
 
+    {# Inclusion du formulaire #}
     {{ include('housing/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('housing_index') }}">back to list</a>
-
+<div class="text-right">
+    {# Bouton retour à la liste #}
+    <a class="btn btn-primary" href="{{ path('housing_index') }}">{{'back to list'|trans}}</a>
+</div>
+    {# Inclusion du formulaire delete  #}
     {{ include('housing/_delete_form.html.twig') }}
 {% endblock %}
+
+
+
