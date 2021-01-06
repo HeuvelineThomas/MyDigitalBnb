@@ -1,4 +1,41 @@
 {{ form_start(form) }}
+
+    <h5>{{'Title'|trans}}</h5>
+        {{ form_errors(form.title_housing) }}
+        {{ form_widget(form.title_housing, {'attr': {'class': 'form-control mb-3'}}) }}
+
+    <h5>{{'Description'|trans}}</h5>
+        {{ form_errors(form.description_housing) }}
+        {{ form_widget(form.description_housing, {'attr': {'class': 'form-control mb-3'}}) }}
+
+    <h5>{{'Disponibility'|trans}}</h5>
+        {{ form_errors(form.disponibility_housing) }}
+        {{ form_widget(form.disponibility_housing, {'attr': {'class': 'form-control mb-3', 'style': 'width: 250px'}}) }}
+
+    <h5>{{'Price per night'|trans}}</h5>
+        {{ form_errors(form.price_per_night_housing) }}
+        {{ form_widget(form.price_per_night_housing, {'attr': {'class': 'form-control mb-3'}}) }}
+
+    <h5>{{'Street'|trans}}</h5>
+        {{ form_errors(form.street_housing) }}
+        {{ form_widget(form.street_housing, {'attr': {'class': 'form-control mb-3'}}) }}
+
+    <h5>{{'Post code'|trans}}</h5>
+        {{ form_errors(form.post_code_housing) }}
+        {{ form_widget(form.post_code_housing, {'attr': {'class': 'form-control mb-3'}}) }}
+
+    <h5>{{'City'|trans}}</h5>
+        {{ form_errors(form.city_housing) }}
+        {{ form_widget(form.city_housing, {'attr': {'class': 'form-control mb-3'}}) }}
+
+    <h5>{{'Type housing'|trans}}</h5>
+        {{ form_errors(form.type_housing) }}
+        {{ form_widget(form.type_housing, {'attr': {'class': 'form-control mb-3'}}) }}
+
+    <h5>{{'Image'|trans}}</h5>
+        {{ form_errors(form.img_housing) }}
+        {{ form_widget(form.img_housing, {'attr': {'class': 'text-editor mb-3'}}) }}
+
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <button class="btn btn-info mt-3">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

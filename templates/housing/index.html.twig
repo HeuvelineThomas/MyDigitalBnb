@@ -1,45 +1,59 @@
+
+{% block title %}{{'Housing index'|trans}}{% endblock %}
+
 {% extends 'base.html.twig' %}
-
-{% block title %}Housing index{% endblock %}
-
 {% block body %}
-    <h1>Housing index</h1>
+    <div class="container">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title_housing</th>
-                <th>Description_housing</th>
-                <th>Disponibility_housing</th>
-                <th>Price_per_night_housing</th>
-                <th>Address_housing</th>
-                <th>Type_housing</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for housing in housings %}
-            <tr>
-                <td>{{ housing.id }}</td>
-                <td>{{ housing.titleHousing }}</td>
-                <td>{{ housing.descriptionHousing }}</td>
-                <td>{{ housing.disponibilityHousing ? housing.disponibilityHousing|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ housing.pricePerNightHousing }}</td>
-                <td>{{ housing.addressHousing }}</td>
-                <td>{{ housing.typeHousing }}</td>
-                <td>
-                    <a href="{{ path('housing_show', {'id': housing.id}) }}">show</a>
-                    <a href="{{ path('housing_edit', {'id': housing.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <h1>{{'Housing index'|trans}}</h1>
 
-    <a href="{{ path('housing_new') }}">Create new</a>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>{{'Id'|trans}}</th>
+                    <th>{{'Title'|trans}}</th>
+                    <th>{{'Description'|trans}}</th>
+                    <th>{{'Disponibility'|trans}}</th>
+                    <th>{{'Price per night'|trans}}</th>
+                    <th>{{'Address'|trans}}</th>
+                    <th>{{'Type'|trans}}</th>
+                    <th>{{'Actions'|trans}}</th>
+                </tr>
+            </thead>
+            <tbody>
+            {# Collection des logements #}
+            {% for housing in housings %}
+                <tr>
+                    <td>{{ housing.id }}</td>
+                    <td>{{ housing.titleHousing }}</td>
+                    <td>{{ housing.descriptionHousing }}</td>
+                    <td>{{ housing.disponibilityHousing ? housing.disponibilityHousing|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ housing.pricePerNightHousing }}</td>
+                    <td>{{ housing.streetHousing}} {{ housing.postCodeHousing }} {{ housing.cityHousing}} </td>
+                    <td>{{ housing.typeHousing }}</td>
+                    <td>
+                            <a class="btn btn-secondary" href="{{ path('housing_show', {'id': housing.id}) }}"><i class="fas fa-eye"></i></a>
+
+                            {# Utilisateur connecté en tant qu'utilisateur #}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a class="btn btn-warning" href="{{ path('housing_edit', {'id': housing.id}) }}"><i class="fas fa-edit"></i></a>
+                                <a class="btn btn-danger" href="{{ path('housing_delete', {'id': housing.id}) }}"><i class="fas fa-trash-alt"></i></a>
+                            {% endif %}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">{{'No records found'|trans}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {# Utilisateur connecté en tant qu'admin #}
+    {% if is_granted('ROLE_ADMIN') %}
+        {# Bouton qui renvoi vers le formulaire de création #}
+        <a class="btn btn-primary" href="{{ path('housing_new') }}">{{'Create new'|trans}}</a>
+    {% endif %}
+    
 {% endblock %}
